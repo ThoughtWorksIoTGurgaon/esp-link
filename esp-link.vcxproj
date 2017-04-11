@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cmd\cmd.c" />
+    <ClInclude Include="esp-link\cgiThoughtWorks.c" />  
     <ClCompile Include="cmd\handlers.c" />
     <ClCompile Include="esp-link\cgi.c" />
     <ClCompile Include="esp-link\cgiflash.c" />
@@ -51,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cmd\cmd.h" />
+    <ClInclude Include="esp-link\cgiThoughtWorks.h" />
     <ClInclude Include="esp-link\cgi.h" />
     <ClInclude Include="esp-link\cgiflash.h" />
     <ClInclude Include="esp-link\cgimqtt.h" />
@@ -107,6 +109,8 @@
     <None Include="html\pure.css" />
     <None Include="html\services.html" />
     <None Include="html\services.js" />
+    <None Include="html\thoughtworks\smokin.html" />
+    <None Include="html\thoughtworks\thoughtworks.js" />
     <None Include="html\style.css" />
     <None Include="html\ui.js" />
     <None Include="html\wifi\wifi.html" />

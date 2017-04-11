@@ -14,6 +14,7 @@
 #include "httpdespfs.h"
 #include "cgi.h"
 #include "cgiwifi.h"
+#include "cgithoughtworks.h"
 #include "cgipins.h"
 #include "cgitcp.h"
 #include "cgimqtt.h"
@@ -65,6 +66,7 @@ should be placed above the URLs they protect.
 */
 HttpdBuiltInUrl builtInUrls[] = {
   { "/", cgiRedirect, "/home.html" },
+  { "/thoughtworks/gpio2Toggle", cgiThoughtWorksGPIOToggle, NULL },
   { "/menu", cgiMenu, NULL },
   { "/flash/next", cgiGetFirmwareNext, NULL },
   { "/flash/upload", cgiUploadFirmware, NULL },
@@ -81,8 +83,8 @@ HttpdBuiltInUrl builtInUrls[] = {
   { "/console/send", ajaxConsoleSend, NULL },
   //Enable the line below to protect the WiFi configuration with an username/password combo.
   //    {"/wifi/*", authBasic, myPassFn},
-  { "/wifi", cgiRedirect, "/wifi/wifi.html" },
   { "/wifi/", cgiRedirect, "/wifi/wifi.html" },
+  { "/thoughtworks/", cgiRedirect, "/thoughtworks/smokin.html" },
   { "/wifi/info", cgiWifiInfo, NULL },
   { "/wifi/scan", cgiWiFiScan, NULL },
   { "/wifi/connect", cgiWiFiConnect, NULL },
