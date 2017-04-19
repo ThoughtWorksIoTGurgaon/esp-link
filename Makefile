@@ -444,9 +444,9 @@ $(BUILD_BASE)/espfs_img.o: html/ html/wifi/ espfs/mkespfsimage/mkespfsimage
 	$(Q) cp -r html/wifi/*.png html_compressed/wifi;
 	$(Q) cp -r html/wifi/*.js html_compressed/wifi;
 	$(Q) cp -r html/thoughtworks/*.js html_compressed/thoughtworks;
-	
 ifeq ("$(COMPRESS_W_HTMLCOMPRESSOR)","yes")
 	$(Q) echo "Compressing assets with htmlcompressor. This may take a while..."
+	$(info ************  WILL COMPRESS HTML FILES!!!! ************);
 	$(Q) java -jar tools/$(HTML_COMPRESSOR) \
 	  -t html --remove-surrounding-spaces max --remove-quotes --remove-intertag-spaces \
 	  -o $(abspath ./html_compressed)/ \
@@ -472,6 +472,7 @@ else
 	$(Q) cp -r html/*.html html_compressed;
 	$(Q) cp -r html/wifi/*.html html_compressed/wifi;	
 	$(Q) cp -r html/thoughtworks/*.html html_compressed/thoughtworks;	
+	$(info ************  WILL NOT COMPRESS HTML FILES!!!! ************);
 endif
 ifeq (,$(findstring mqtt,$(MODULES)))
 	$(Q) rm -rf html_compressed/mqtt.html
